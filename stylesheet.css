@@ -1,9 +1,11 @@
 #next, #back {
     display: none;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 20%;
+    margin-bottom: 10%;
 }
-
+#back {
+    margin-right: 5%;
+}
 .form-signin {
     max-width: 25%;
     padding: 15px;
@@ -106,11 +108,14 @@ body {
  * Affix and center
  */
 input[type="radio"] {
-    margin-right: 10px;
+        margin-right: 10px;
+        vertical-align: baseline;
+
 }
 
 label {
     margin: 2%;
+    margin-right: 30px;
 }
 
 @media (min-width: 768px) {
