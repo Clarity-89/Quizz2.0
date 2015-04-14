@@ -143,4 +143,5 @@
         n.checked = true;
     }
 
+    TweenLite.from('#title', 2.5, { opacity: 0.2 })
 })();
