@@ -1,5 +1,7 @@
 #next, #back {
     display: none;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .form-signin {
@@ -68,6 +70,7 @@ body {
     padding: 30px;
 
 }
+
 #title {
     margin-top: 5%;
 }
@@ -85,15 +88,30 @@ body {
 /*
  * Footer
  */
+.btn-primary {
+    width: 100%;
+    text-align: left;
+}
 
 .mastfoot {
     color: #e8e8e8; /* IE8 proofing */
 
 }
 
+#form {
+    text-align: left;
+}
+
 /*
  * Affix and center
  */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    margin: 2%;
+}
 
 @media (min-width: 768px) {
     /* Pull out the header and footer */

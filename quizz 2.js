@@ -97,7 +97,7 @@
         } else {
             setContent([head, quest, form], [title, allQuestions[numQuestion].question, null]);
             allQuestions[numQuestion].choices.map(function (el, i) {
-                form.innerHTML += '<input type="radio" name="choice" id ="' + i + '" value="' + i + '">' + el + '<br>';
+                form.innerHTML += '<label class="btn btn-primary"><input type="radio" name="choice" id ="' + i + '" value="' + i + '">' + el + '</label><br>';
                 return form;
             });
         }
