@@ -84,11 +84,11 @@
     }
 
     function displayQuestion() {
-        console.log(numQuestion);
-        console.log(numCorrect);
+
         var title = 'Choose one of the following answers to the question:';
         next.value = "Next";
-        setDisplay([start, next, $('title'), cont, try_again], ['none', 'inline', 'none', 'block', 'none']);
+        setDisplay([start, next, $('title'), try_again, cont], ['none', 'inline', 'none', 'none', 'block']);
+        TweenLite.from(cont, 1.5, {opacity: 0});
         setClass(quest, '');
         if (numQuestion > 0) {
             setDisplay(back, 'inline');
@@ -118,7 +118,6 @@
             numCorrect++;
 
         }
-
         numQuestion++;
         setContent(err, '');
         setClass(err, '');
@@ -143,5 +142,5 @@
         n.checked = true;
     }
 
-    TweenLite.from('#title', 2.5, { opacity: 0.2 })
+    TweenLite.from('#title', 2, {opacity: 0.2})
 })();
