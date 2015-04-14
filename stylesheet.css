@@ -1,11 +1,13 @@
-#next, #back {
+#next, #back, #try_again {
     display: none;
     margin-top: 20%;
     margin-bottom: 10%;
 }
+
 #back {
     margin-right: 5%;
 }
+
 .form-signin {
     max-width: 25%;
     padding: 15px;
@@ -46,9 +48,11 @@ body {
     min-height: 100%;
 
 }
+
 a {
     color: #28e316;
 }
+
 .site-wrapper-inner {
     display: table-cell;
     vertical-align: top;
@@ -110,8 +114,8 @@ a {
  * Affix and center
  */
 input[type="radio"] {
-        margin-right: 10px;
-        vertical-align: baseline;
+    margin-right: 10px;
+    vertical-align: baseline;
 
 }
 

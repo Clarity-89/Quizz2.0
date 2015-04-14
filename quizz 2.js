@@ -6,6 +6,7 @@
         dang = "alert alert-danger",
         success = "alert alert-success",
         start = $('start'),
+        try_again = $('try_again'),
         next = $('next'), back = $('back'),
         err = $('err'),
         quest = $('question'),
@@ -70,15 +71,12 @@
 
     function showScore() {
         var finish = 'You have completed the quiz. Correct answers: ',
-            percent = parseFloat(numCorrect*100/allQuestions.length).toFixed(2) + '%',
-        percentText = ', which is '+percent;
-
-        console.log(percent);
-        setContent([quest, head, form], [finish + numCorrect+percentText, '', '']);
+            percent = parseFloat(numCorrect * 100 / allQuestions.length).toFixed(2) + '%',
+            percentText = ', which is ' + percent;
+        setContent([quest, head, form], [finish + numCorrect + percentText, '', '']);
         setClass(quest, success);
-        setDisplay([next, back, start], ['none', 'none', 'inline']);
-        start.value = "Try again!";
-        start.onclick = function () {
+        setDisplay([next, back, try_again], ['none', 'none', 'inline']);
+        try_again.onclick = function () {
             numQuestion = 0;
             numCorrect = 0;
             return displayQuestion();
@@ -86,8 +84,11 @@
     }
 
     function displayQuestion() {
+        console.log(numQuestion);
+        console.log(numCorrect);
         var title = 'Choose one of the following answers to the question:';
-        setDisplay([start, next, $('title'), cont], ['none', 'inline', 'none', 'block']);
+        next.value = "Next";
+        setDisplay([start, next, $('title'), cont, try_again], ['none', 'inline', 'none', 'block', 'none']);
         setClass(quest, '');
         if (numQuestion > 0) {
             setDisplay(back, 'inline');
@@ -115,12 +116,14 @@
         }
         if (correctChoice == answer) {
             numCorrect++;
+
         }
 
         numQuestion++;
         setContent(err, '');
         setClass(err, '');
         displayQuestion();
+
     }
 
     function handleBack() {
