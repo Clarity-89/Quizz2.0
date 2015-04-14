@@ -74,7 +74,7 @@
         percentText = ', which is '+percent;
 
         console.log(percent);
-        setContent([quest, head, form], [finish + numCorrect+percentText, null, null]);
+        setContent([quest, head, form], [finish + numCorrect+percentText, '', '']);
         setClass(quest, success);
         setDisplay([next, back, start], ['none', 'none', 'inline']);
         start.value = "Try again!";
@@ -95,7 +95,7 @@
         if (numQuestion === allQuestions.length) {
             showScore();
         } else {
-            setContent([head, quest, form], [title, allQuestions[numQuestion].question, null]);
+            setContent([head, quest, form], [title, allQuestions[numQuestion].question, '']);
             allQuestions[numQuestion].choices.map(function (el, i) {
                 form.innerHTML += '<label class="btn btn-primary"><input type="radio" name="choice" id ="' + i + '" value="' + i + '">' + el + '</label><br>';
                 return form;
