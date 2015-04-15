@@ -30,20 +30,15 @@
     margin: 10%;
 }
 
-html {
-     background: url("http://i.imgur.com/NMJKdxN.jpg") no-repeat center center fixed;
-     -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 body {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     font-family: 'Nunito', sans-serif;
-   
-
+   background: url("http://i.imgur.com/NMJKdxN.jpg") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
