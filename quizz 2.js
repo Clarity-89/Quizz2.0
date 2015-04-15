@@ -85,10 +85,13 @@
 
     function displayQuestion() {
 
-        var title = 'Choose one of the following answers to the question:';
+        var headline = 'Choose one of the following answers to the question:';
         next.value = "Next";
         setDisplay([start, next, $('title'), try_again, cont], ['none', 'inline', 'none', 'none', 'block']);
-        TweenLite.from(cont, 1.5, {opacity: 0});
+
+        TweenLite.from(form, 1, {autoAlpha: 0});
+        TweenLite.from(quest, 1, {autoAlpha: 0});
+        TweenLite.from(head, 5, {y: 0});
         setClass(quest, '');
         if (numQuestion > 0) {
             setDisplay(back, 'inline');
@@ -96,7 +99,7 @@
         if (numQuestion === allQuestions.length) {
             showScore();
         } else {
-            setContent([head, quest, form], [title, allQuestions[numQuestion].question, '']);
+            setContent([head, quest, form], [headline, allQuestions[numQuestion].question, '']);
             allQuestions[numQuestion].choices.map(function (el, i) {
                 form.innerHTML += '<label class="btn btn-primary"><input type="radio" name="choice" id ="' + i + '" value="' + i + '">' + el + '</label><br>';
                 return form;
@@ -118,6 +121,7 @@
             numCorrect++;
 
         }
+
         numQuestion++;
         setContent(err, '');
         setClass(err, '');
@@ -142,5 +146,6 @@
         n.checked = true;
     }
 
-    TweenLite.from('#title', 2, {opacity: 0.2})
+    TweenMax.from('.site-wrapper', 2, {autoAlpha: 0});
+
 })();

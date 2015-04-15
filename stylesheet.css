@@ -27,8 +27,8 @@
     background-color: rgba(21, 98, 115, 0.7);
     display: none;
     border-radius: 15px;
-      margin-top: 10%;
-  
+    margin-top: 10%;
+
 }
 
 body {
@@ -36,9 +36,9 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     font-family: 'Nunito', sans-serif;
     background: url("http://i.imgur.com/NMJKdxN.jpg") no-repeat center center fixed;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -105,7 +105,7 @@ a {
 }
 
 .mastfoot {
-    color: #e8e8e8; /* IE8 proofing */
+    color: #e8e8e8;
 
 }
 
@@ -153,5 +153,6 @@ label {
 }
 
 .alert {
-    opacity: .9;
+    opacity: .7;
 }
+
