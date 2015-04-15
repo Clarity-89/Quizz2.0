@@ -27,7 +27,7 @@
     background-color: rgba(21, 98, 115, 0.7);
     display: none;
     border-radius: 15px;
-    margin: 10%;
+  
 }
 
 body {
@@ -112,10 +112,16 @@ a {
     text-align: left;
 }
 
-/*
- * Affix and center
- */
+input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: baseline;
 
+}
+
+label {
+    margin: 2%;
+    margin-right: 30px;
+}
 
 @media (min-width: 768px) {
     /* Pull out the header and footer */
