@@ -91,7 +91,6 @@
 
         TweenLite.from(form, 1, {autoAlpha: 0});
         TweenLite.from(quest, 1, {autoAlpha: 0});
-        TweenLite.from(head, 5, {y: 0});
         setClass(quest, '');
         if (numQuestion > 0) {
             setDisplay(back, 'inline');
