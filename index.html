@@ -14,13 +14,13 @@
 <body>
 
 
-<div class="site-wrapper">
+<div class="site-wrapper" id="title">
 
     <div class="site-wrapper-inner">
 
         <div class="cover-container">
 
-            <div class="inner cover" id="title">
+            <div class="inner cover">
                 <h1 class="cover-heading">General knowledge quiz</h1>
 
                 <h2 id="desc" class="lead">Check your knowledge with this short quiz.<br> Press <strong id="green">Start
@@ -34,12 +34,13 @@
             <div class="mastfoot">
                 <div class="inner">
                     <p>The Quiz is powered by <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>,
-                        <a target="_blank" href="https://github.com/ded/reqwest">reqwest</a>,
+                        <a target="_blank" href="https://github.com/ded/reqwest">reqwest</a>, <a target="_blank"
+                                                                                                 href="http://handlebarsjs.com/">Handlebars.js</a>,
                         <a target="_blank" href="http://www.greensock.com/gsap-js/">GSAP</a> and JavaScript.
                         View the source code on <a target="_blank"
                                                    href="https://github.com/Clarity-89/Quizz2.0">Github</a>.
                         Background image by <a target="_blank" href="http://annetteberglund.com/spring/">Annette
-                            Berglund</a>. </p>
+                            Berglund</a>.</p>
                 </div>
             </div>
 
@@ -74,8 +75,7 @@
 </script>
 <script id="choices" type="text/x-handlebars-template">
     {{#each data}}
-    <label class="btn btn-primary"><input type="radio" name="choice" id="{{@index}}" value="{{@index}}"> {{this}}
-    </label><br>
+    <label class="btn btn-primary"><input type="radio" name="choice" id="{{@index}}" value="{{@index}}">{{this}}</label><br>
     {{/each}}
 </script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
