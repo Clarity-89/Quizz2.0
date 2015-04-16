@@ -6,7 +6,7 @@
         dang = "alert alert-danger",
         success = "alert alert-success",
         start = $('start'),
-        try_again = $('try_again'),
+        tryAgain = $('try_again'),
         next = $('next'), back = $('back'),
         err = $('err'),
         quest = $('question'),
@@ -69,14 +69,16 @@
         return document.getElementById(id);
     }
 
+
     function showScore() {
-        var finish = 'You have completed the quiz. Correct answers: ',
-            percent = parseFloat(numCorrect * 100 / allQuestions.length).toFixed(2) + '%',
-            percentText = ', which is ' + percent;
-        setContent([quest, head, form], [finish + numCorrect + percentText, '', '']);
+        var source = $('final').innerHTML,
+            template = Handlebars.compile(source),
+            percent = parseFloat(numCorrect * 100 / allQuestions.length).toFixed(1),
+            html = template({correct: numCorrect, percent: percent});
+        setContent([quest, head, form], [html, '', '']);
         setClass(quest, success);
-        setDisplay([next, back, try_again], ['none', 'none', 'inline']);
-        try_again.onclick = function () {
+        setDisplay([next, back, tryAgain], ['none', 'none', 'inline']);
+        tryAgain.onclick = function () {
             numQuestion = 0;
             numCorrect = 0;
             return displayQuestion();
@@ -86,9 +88,7 @@
     function displayQuestion() {
 
         var headline = 'Choose one of the following answers to the question:';
-        next.value = "Next";
-        setDisplay([start, next, $('title'), try_again, cont], ['none', 'inline', 'none', 'none', 'block']);
-
+        setDisplay([start, next, $('title'), tryAgain, cont], ['none', 'inline', 'none', 'none', 'block']);
         TweenLite.from(form, 1, {autoAlpha: 0});
         TweenLite.from(quest, 1, {autoAlpha: 0});
         setClass(quest, '');
@@ -98,11 +98,13 @@
         if (numQuestion === allQuestions.length) {
             showScore();
         } else {
-            setContent([head, quest, form], [headline, allQuestions[numQuestion].question, '']);
-            allQuestions[numQuestion].choices.map(function (el, i) {
-                form.innerHTML += '<label class="btn btn-primary"><input type="radio" name="choice" id ="' + i + '" value="' + i + '">' + el + '</label><br>';
-                return form;
-            });
+            var source = $('choices').innerHTML,
+                source2 = $('q').innerHTML,
+                template1 = Handlebars.compile(source),
+                template2 = Handlebars.compile(source2),
+                data = template1({data: allQuestions[numQuestion].choices}),
+                data2 = template2({data2: allQuestions[numQuestion].question});
+            setContent([head, form, quest], [headline, data, data2]);
         }
     }
 
@@ -120,7 +122,6 @@
             numCorrect++;
 
         }
-
         numQuestion++;
         setContent(err, '');
         setClass(err, '');

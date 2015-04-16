@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.min.js"></script>
+
 </head>
 <body>
 
@@ -35,8 +36,10 @@
                     <p>The Quiz is powered by <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>,
                         <a target="_blank" href="https://github.com/ded/reqwest">reqwest</a>,
                         <a target="_blank" href="http://www.greensock.com/gsap-js/">GSAP</a> and JavaScript.
-                        View the source code on <a target="_blank" href="https://github.com/Clarity-89/Quizz2.0">Github</a>.
-                        Background image by <a target="_blank" href="http://annetteberglund.com/spring/">Annette Berglund</a>. </p>
+                        View the source code on <a target="_blank"
+                                                   href="https://github.com/Clarity-89/Quizz2.0">Github</a>.
+                        Background image by <a target="_blank" href="http://annetteberglund.com/spring/">Annette
+                            Berglund</a>. </p>
                 </div>
             </div>
 
@@ -48,12 +51,12 @@
 <div class="container" id="cont">
     <h1 id="head"></h1>
 
+
     <h2 id="question"></h2>
 
     <div class="btn-group" data-toggle="buttons">
-        <form id="form">
 
-        </form>
+        <form id="form"></form>
 
         <input type="submit" value="Back" id="back" class="btn btn-success">
         <input type="button" value="Next" id="next" class="btn btn-success">
@@ -62,7 +65,19 @@
     <div id="err"></div>
 
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+<script id="final" type="text/x-handlebars-template">
+    You have completed the quiz. Correct answers: {{correct}} ({{percent}}%).
+</script>
+<script id="q" type="text/x-handlebars-template">
+    {{data2}}
+</script>
+<script id="choices" type="text/x-handlebars-template">
+    {{#each data}}
+    <label class="btn btn-primary"><input type="radio" name="choice" id="{{@index}}" value="{{@index}}"> {{this}}
+    </label><br>
+    {{/each}}
+</script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="questions.json"></script>
 <script src="quizz 2.js"></script>
