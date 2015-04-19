@@ -24,8 +24,8 @@
         back.onclick = handleBack;
 
     });
-    //custom function to set innerHTML of selected elements if arguments are passed as arrays, each id gets respective
-    // innerHTML from the 'text' array
+    //custom function to set innerHTML of selected elements (if arguments are passed as arrays, each id gets respective
+    // innerHTML from the 'text' array)
     function setContent(ids, text) {
         if (ids.length > 1 && Array.isArray(ids)) {
 
@@ -67,14 +67,14 @@
         return false
     }
 
-//custom function to get elements by its id (to avoid typing document.getElementById all the time
+//custom function to get elements by its id (to avoid typing document.getElementById() all the time)
     function $(id) {
         return document.getElementById(id);
     }
 
 
     function showScore() {
-        // Handlebars template for the final result
+        // Handlebars template for the final score
         var source = $('final').innerHTML,
             template = Handlebars.compile(source),
             percent = parseFloat(numCorrect * 100 / allQuestions.length).toFixed(1),
