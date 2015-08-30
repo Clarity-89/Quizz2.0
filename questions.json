@@ -28,5 +28,25 @@
       "Iceland"
     ],
     "corAnswer": 3
-  }
+  }, 
+  {
+    "question": "Which is the second largest planet in the solar system?",
+    "choices": [
+      "Earth",
+      "Jupiter",
+      "Saturn",
+      "Mercury"
+    ],
+    "corAnswer": 2
+  }, 
+  {
+    "question": "What does a numismatist collect?",
+    "choices": [
+      "Coins",
+      "Post stamps",
+      "Bottles",
+      "Butterflies"
+    ],
+    "corAnswer": 0
+  } 
 ]
